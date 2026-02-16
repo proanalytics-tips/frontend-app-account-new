@@ -16,7 +16,8 @@
     "lint:fix": "npm run lint -- --fix",
     "snapshot": "fedx-scripts jest --updateSnapshot",
     "start": "fedx-scripts webpack-dev-server --progress",
-    "test": "TZ=UTC fedx-scripts jest --coverage --passWithNoTests"
+    "test": "TZ=UTC fedx-scripts jest --coverage --passWithNoTests",
+    "wdev": "cross-env PUBLIC_PATH=/account/ MFE_CONFIG_API_URL='http://localhost:8000/api/mfe_config/v1' fedx-scripts webpack-dev-server --progress --host apps.local.openedx.io --config webpack.dev-extract-css.config.js"
   },
   "bugs": {
     "url": "https://github.com/openedx/frontend-app-account/issues"
@@ -47,6 +48,7 @@
     "bowser": "2.12.1",
     "classnames": "2.5.1",
     "core-js": "3.46.0",
+    "cross-env": "^10.1.0",
     "font-awesome": "4.7.0",
     "form-urlencoded": "6.1.6",
     "formdata-polyfill": "4.0.10",

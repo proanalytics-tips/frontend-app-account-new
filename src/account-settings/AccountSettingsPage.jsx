@@ -17,6 +17,7 @@ import {
   Container, Hyperlink, Icon, Alert,
 } from '@openedx/paragon';
 import { CheckCircle, Error, WarningFilled } from '@openedx/paragon/icons';
+import { PluginSlot } from '@openedx/frontend-plugin-framework';
 
 import messages from './AccountSettingsPage.messages';
 import {
@@ -854,7 +855,11 @@ class AccountSettingsPage extends React.Component {
       loadingError,
     } = this.props;
 
+
     return (
+      <PluginSlot 
+        id="org.openedx.frontend.account.settings"
+      >
       <Container className="page__account-settings py-5" size="xl">
         {this.renderDuplicateTpaProviderMessage()}
         <h1 className="mb-4">
@@ -873,6 +878,7 @@ class AccountSettingsPage extends React.Component {
           </div>
         </div>
       </Container>
+      </PluginSlot>
     );
   }
 }
